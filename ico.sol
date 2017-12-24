@@ -232,7 +232,7 @@ contract ICO is admined {
     * @notice function to withdraw eth to creator address
     */
     function payOut() public {
-        require(msg.sender == creator);
+        require(msg.sender == creator); //Only the creator can withdraw funds
         require(creator.send(this.balance));
         LogBeneficiaryPaid(creator);
     }
